@@ -1,10 +1,19 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState, useEffect } from "react";
+import axios from "axios";
+import reactLogo from "./assets/react.svg";
+import viteLogo from "/vite.svg";
+import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
+  const [backendMessage, setBackendMessage] = useState("");
+
+  useEffect(() => {
+    axios
+      .get("https://portafolio-backend-9d99.onrender.com/")
+      .then((res) => setBackendMessage(res.data.message))
+      .catch((err) => console.error(err));
+  }, []);
 
   return (
     <>
@@ -25,12 +34,13 @@ function App() {
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>
+        <p>Mensaje del backend: {backendMessage}</p>
       </div>
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
