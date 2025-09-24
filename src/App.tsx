@@ -30,7 +30,6 @@ useEffect(() => {
         </a>
       </div>
       <h1>Vite + React</h1>
-      <h2>hola mundo</h2>
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
