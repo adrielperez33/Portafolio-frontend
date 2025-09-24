@@ -11,9 +11,13 @@ function App() {
 useEffect(() => {
   axios
     .get("https://portafolio-backend-9d99.onrender.com/api/hello")
-    .then((res) => setBackendMessage(res.data.message))
+    .then((res) => {
+      console.log("Respuesta del backend:", res.data); // 👈 debug
+      setBackendMessage(res.data.message);
+    })
     .catch((err) => console.error("Error al conectar con backend:", err));
 }, []);
+
 
   return (
     <>
