@@ -10,7 +10,7 @@ function App() {
 
   useEffect(() => {
     axios
-      .get("https://portafolio-backend-9d99.onrender.com/")
+      .get("https://referby-back.onrender.com/api/hello") // 👈 tu endpoint real en Render
       .then((res) => setBackendMessage(res.data.message))
       .catch((err) => console.error(err));
   }, []);
