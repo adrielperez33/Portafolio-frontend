@@ -8,12 +8,12 @@ function App() {
   const [count, setCount] = useState(0);
   const [backendMessage, setBackendMessage] = useState("");
 
-  useEffect(() => {
-    axios
-      .get("https://referby-back.onrender.com/api/hello") // 👈 tu endpoint real en Render
-      .then((res) => setBackendMessage(res.data.message))
-      .catch((err) => console.error(err));
-  }, []);
+useEffect(() => {
+  axios
+    .get("https://portafolio-backend-9d99.onrender.com/api/hello")
+    .then((res) => setBackendMessage(res.data.message))
+    .catch((err) => console.error("Error al conectar con backend:", err));
+}, []);
 
   return (
     <>
