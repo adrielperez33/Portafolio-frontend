@@ -12,7 +12,7 @@ export interface Portfolio {
     twitter: string
   }
   bio: string
-  experience: string
+  experience: number
   education: string[]
   certifications: string[]
   languages: string[]

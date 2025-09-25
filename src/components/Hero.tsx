@@ -1,22 +1,31 @@
 "use client"
 
+import type { Portfolio } from "../types"
+
 interface HeroProps {
-  data?: {
-    name: string
-    title: string
-    bio: string
-    location: string
-    experience: number
-  }
+  data?: Portfolio
 }
 
 const Hero = ({ data }: HeroProps) => {
-  const defaultData = {
+  const defaultData: Portfolio = {
     name: "Tu Nombre",
     title: "Full Stack Developer",
-    bio: "Passionate about creating innovative digital experiences that blend thoughtful design with robust engineering.",
+    description: "Passionate developer creating innovative solutions",
+    email: "tu@email.com",
+    phone: "+1234567890",
     location: "Tu Ciudad",
+    website: "https://tuportafolio.com",
+    social: {
+      github: "https://github.com/tuusuario",
+      linkedin: "https://linkedin.com/in/tuusuario",
+      twitter: "https://twitter.com/tuusuario",
+    },
+    bio: "Passionate about creating innovative digital experiences that blend thoughtful design with robust engineering.",
     experience: 3,
+    education: [],
+    certifications: [],
+    languages: [],
+    interests: [],
   }
 
   const heroData = data || defaultData
