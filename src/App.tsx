@@ -10,11 +10,12 @@ import Contact from "./components/Contact"
 import Footer from "./components/Footer"
 import LiveStats from "./components/LiveStats"
 import AnalyticsDashboard from "./components/AnalyticsDashboard"
+import type { PortfolioData } from "./types"
 
 const API_BASE_URL = "https://portafolio-backend-9d99.onrender.com"
 
 function App() {
-  const [portfolioData, setPortfolioData] = useState(null)
+  const [portfolioData, setPortfolioData] = useState<PortfolioData | null>(null)
   const [loading, setLoading] = useState(true)
   const [showAnalytics, setShowAnalytics] = useState(false)
 
