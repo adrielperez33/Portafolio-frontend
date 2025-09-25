@@ -23,23 +23,24 @@ export interface Project {
   id: string
   title: string
   description: string
-  longDescription: string
+  longDescription?: string
   technologies: string[]
   category: string
   status: string
-  startDate: string
+  startDate?: string
   endDate?: string
-  githubUrl?: string
-  liveUrl?: string
-  imageUrl?: string
-  featured: boolean
+  github_url?: string
+  live_url?: string
+  image_url?: string
+  featured?: boolean
   metrics: {
     views: number
     likes: number
-    shares: number
-    comments: number
+    shares?: number
+    comments?: number
+    performance_score: number
   }
-  performance: {
+  performance?: {
     loadTime: number
     uptime: number
     responseTime: number
@@ -51,17 +52,24 @@ export interface Skill {
   name: string
   category: string
   level: number
-  experience: string
-  projects: string[]
-  certifications: string[]
-  lastUsed: string
-  trending: boolean
+  experience_years: number
+  projects_count: number
+  learning_progress: number
+  certifications?: string[]
+  lastUsed?: string
+  trending?: boolean
 }
 
 export interface PortfolioData {
   portfolio: Portfolio
-  projects: Project[]
-  skills: Skill[]
+  projects: {
+    projects: Project[]
+    total: number
+  }
+  skills: {
+    skills: Skill[]
+    categories: string[]
+  }
 }
 
 export interface InteractionData {

@@ -30,8 +30,16 @@ function App() {
 
         setPortfolioData({
           portfolio: portfolioRes.data,
-          projects: projectsRes.data,
-          skills: skillsRes.data,
+          projects: {
+            projects: Array.isArray(projectsRes.data) ? projectsRes.data : projectsRes.data.projects || [],
+            total: Array.isArray(projectsRes.data) ? projectsRes.data.length : projectsRes.data.total || 0,
+          },
+          skills: {
+            skills: Array.isArray(skillsRes.data) ? skillsRes.data : skillsRes.data.skills || [],
+            categories: Array.isArray(skillsRes.data)
+              ? [...new Set(skillsRes.data.map((skill: any) => skill.category))]
+              : skillsRes.data.categories || [],
+          },
         })
       } catch (error) {
         console.error("Error fetching portfolio data:", error)
