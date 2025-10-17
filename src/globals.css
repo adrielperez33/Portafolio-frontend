@@ -4,7 +4,7 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Enhanced color palette with vibrant blues and teals for a modern tech feel */
+  /* Enhanced color palette with vibrant blues and teals for modern tech feel */
   --background: oklch(0.99 0.005 240);
   --foreground: oklch(0.15 0.02 240);
   --card: oklch(1 0 0);
@@ -131,46 +131,39 @@
     @apply bg-background text-foreground;
   }
 
-  /* Smooth scrolling for better UX */
+  /* Added smooth scrolling for better UX */
   html {
     scroll-behavior: smooth;
   }
 }
 
-/* Custom utility classes for enhanced visual effects */
+/* Added custom utility classes for enhanced visual effects */
 @layer utilities {
-  /* Glass morphism effect */
   .glass-effect {
     @apply bg-card/80 backdrop-blur-xl border border-border/50 shadow-lg;
   }
 
-  /* Enhanced glass with stronger blur */
   .glass-effect-strong {
     @apply bg-card/60 backdrop-blur-2xl border border-border/30 shadow-2xl;
   }
 
-  /* Gradient text effect */
   .gradient-text {
     @apply bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent;
   }
 
-  /* Hover lift effect */
   .hover-lift {
     @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/20;
   }
 
-  /* Section padding */
   .section-padding {
     @apply px-6 py-20 md:py-32;
   }
 
-  /* Animated gradient background */
   .animate-gradient-shift {
     background-size: 200% 200%;
     animation: gradient-shift 15s ease infinite;
   }
 
-  /* Glow effect on hover */
   .glow-on-hover {
     @apply relative transition-all duration-300;
   }
@@ -187,19 +180,16 @@
     @apply opacity-50;
   }
 
-  /* Shimmer effect for loading states */
   .shimmer {
     background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.1) 50%, transparent 100%);
     background-size: 200% 100%;
     animation: shimmer 2s infinite;
   }
 
-  /* Pulse glow animation */
   .pulse-glow {
     animation: pulse-glow 2s ease-in-out infinite;
   }
 
-  /* Floating animation */
   .animate-float {
     animation: float 6s ease-in-out infinite;
   }
@@ -212,23 +202,20 @@
     animation: float 10s ease-in-out infinite;
   }
 
-  /* Slow pulse */
   .animate-pulse-slow {
     animation: pulse-slow 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   }
 
-  /* Fade in up animation */
   .fade-in-up {
     animation: fade-in-up 0.6s ease-out;
   }
 
-  /* Scale in animation */
   .scale-in {
     animation: scale-in 0.4s ease-out;
   }
 }
 
-/* Custom keyframe animations */
+/* Added custom keyframe animations */
 @keyframes gradient-shift {
   0%,
   100% {
@@ -318,12 +305,11 @@
   @apply bg-primary/70;
 }
 
-/* Selection styling */
+/* Added selection and focus styling for better UX */
 ::selection {
   @apply bg-primary/30 text-foreground;
 }
 
-/* Focus visible styling for accessibility */
 :focus-visible {
   @apply outline-2 outline-offset-2 outline-primary;
 }
